@@ -40,7 +40,10 @@ public class BurgerTest {
         Mockito.when(ingredient.getType()).thenReturn(IngredientType.SAUCE);
         Mockito.when(ingredient.getName()).thenReturn("hot sauce");
 
+        Mockito.when(bun.getPrice()).thenReturn(100f);
+        Mockito.when(ingredient.getPrice()).thenReturn(100f);
         ingredients.add(ingredient);
+
         receipt.append(String.format("(==== %s ====)%n", bun.getName()));
         receipt.append(String.format("= %s %s =%n", ingredient.getType().toString().toLowerCase(), ingredient.getName()));
 
