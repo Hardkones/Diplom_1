@@ -31,6 +31,7 @@ public class BurgerTest {
         float expected = 100f + 100f * 2;
         assertEquals(expected, burger.getPrice(), 0);
     }
+
     @Test
     public void getReceiptOfBurgerTest() {
         burger.bun = bun;
@@ -47,12 +48,13 @@ public class BurgerTest {
         receipt.append(String.format("(==== %s ====)%n", bun.getName()));
         receipt.append(String.format("= %s %s =%n", ingredient.getType().toString().toLowerCase(), ingredient.getName()));
 
-        receipt.append(String.format("(==== %s ====)%n",bun.getName()));
+        receipt.append(String.format("(==== %s ====)%n", bun.getName()));
         receipt.append(String.format("%nPrice: %f%n", burger.getPrice()));
         String expected = receipt.toString();
         String actual = burger.getReceipt();
         assertEquals(expected, actual);
     }
+
     @Test
     public void addIngredientInBurger() {
         burger.ingredients = ingredients;
@@ -66,6 +68,7 @@ public class BurgerTest {
         burger.setBuns(bun);
         assertNotNull(burger.bun);
     }
+
     @Test
     public void removeIngredientFromBurger() {
         burger.ingredients = ingredients;
@@ -73,6 +76,7 @@ public class BurgerTest {
         burger.removeIngredient(0);
         assertTrue(ingredients.isEmpty());
     }
+
     @Test
     public void moveIngredientInBurger() {
         burger.ingredients = ingredients;
